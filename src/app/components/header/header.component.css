@@ -1,0 +1,44 @@
+.search{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+
+.searchSug{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 5px;
+  position: absolute;
+  left: 329px;
+  top: 51px;
+  list-style: none;
+  font-size: 20px;
+  background-color: #80808063;
+  border-radius: 20px;
+  z-index: 100;
+  width: 265px;
+}
+
+.searchSug li{
+  background-color: #b4c1aecc;
+  margin: 11px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+a{
+  cursor: pointer;
+}
+
+mat-icon{
+  margin-left: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+  border: none;
+}
+
+.nav-link:active{
+  color: black;
+  font-weight: 600;
+}

@@ -1,0 +1,24 @@
+<div *ngIf="searchArray" style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div routerLink="/details/{{data.id}}" class="list" *ngFor="let data of searchArray">
+		<div class="image-wrapper">
+			<img [src]="data.url"/>
+    </div>
+			<div>
+				<div class="product-name">
+					<h1 style="margin-bottom: 0;"><strong >{{data.name}}</strong></h1> <br><p style="font-size: 16px">{{data.color}}</p>
+				</div>
+				<ul>
+					<li>
+						{{data.description}}
+					</li>
+				</ul>
+			</div>
+			<div class="price">₹{{data.price}}</div>
+</div>
+</div>
+<div *ngIf="!searchArray || searchArray.length === 0" class="container">
+  <div class="card msgBox m-5 p-5">
+    <h1 class="noResult">No Results</h1>
+    <h2 class="noResultMsg">we couldn't find any match for your search</h2>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Flipkart</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form *ngIf="menuType === 'default' || menuType === 'user'" class="d-flex search">
+        <input
+          (keyup)="onSearch($event)"
+          (blur)="hideSearch(inputSearch)"
+          #inputSearch
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button
+          (click)="searchSubmit(inputSearch.value)"
+          class="btn btn-outline-success"
+        >
+          Search
+        </button>
+      </form>
+      <ul *ngIf="searchSuggestionArr" class="searchSug">
+        <li *ngFor="let data of searchSuggestionArr" (mousedown)="clickList(data?.name)">
+            <mat-icon>search</mat-icon> {{ data.name }}
+        </li>
+      </ul>
+
+      <!-- normal header  -->
+      <ul
+        *ngIf="menuType === 'default'"
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+      >
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="seller-auth">seller</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-auth">login/signUp</a>
+        </li>
+        <li class="nav-item">
+          <mat-icon  routerLinkActive="active-link" routerLink="cart" [matBadge]="cartItems? cartItems : null">shopping_cart</mat-icon>
+          <!-- <a class="nav-link" routerLink="/">cart({{cartItems}})</a> -->
+        </li>
+      </ul>
+
+      <!-- user header  -->
+      <ul
+        *ngIf="menuType === 'user'"
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+      >
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="active-link" aria-current="page" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="seller-auth">seller</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-auth">{{userName}}</a>
+        </li>
+        <li class="nav-item">
+          <mat-icon  routerLinkActive="active-link" routerLink="cart" [matBadge]="cartItems? cartItems : null">shopping_cart</mat-icon>
+          <!-- <a class="nav-link" routerLink="cart">cart({{cartItems}})</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="logoutUser()">logOut</a>
+        </li>
+      </ul>
+
+      <!-- seller header  -->
+      <ul
+        style="margin-left: 60%"
+        *ngIf="menuType === 'seller'"
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+      >
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Products List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="logoutSeller()">logOut</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">{{ sellerName }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

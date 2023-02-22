@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div *ngIf="cartHasItem" class="container">
+    <h1>Cart Page  <button class="btn btn-primary" routerLink="/my-orders">My Orders</button></h1>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card m-3 p-3">
+          <ul class="productList" *ngFor="let product of cartData">
+            <li>
+              <img
+                class="image"
+                src="{{product.url}}"
+                alt=""
+              />
+            </li>
+            <li>
+              <h4>{{product.name}}</h4>
+            </li>
+            <li>
+              <h4>{{product.price | currency}}</h4>
+            </li>
+            <li>
+              <h4>Quantity : {{product.quantity}}</h4>
+            </li>
+            <li>
+              <button class="btn btn-danger btn-sm" (click)="removeData(product.id)">Remove</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4 Summary">
+        <h3>Summary</h3>
+        <div class="card m-3 p-3">
+          <ul>
+            <li><span>Amount : </span><span>{{priceSummary.price | currency}}</span></li>
+            <li><span>Tax : </span><span>{{priceSummary.tax | currency}}</span></li>
+            <li><span>Delivery : </span><span>{{priceSummary.delivery | currency}}</span></li>
+            <li><span>Discount : </span><span>{{priceSummary.discount | currency}}</span></li>
+            <li><h3><span>Total : </span></h3><h3><span>{{priceSummary.total | currency}}</span></h3></li>
+            <li><button class="btn btn-success w-100" (click)="checkout()">checkout</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="!cartHasItem">
+    <div class="cart">
+      <div class="container-fluid  mt-30">
+        <div class="row">
+
+         <div class="col-md-12">
+
+             <div class="card">
+           <div class="card-header">
+
+           </div>
+           <div class="card-body cart">
+               <div class="col-sm-12 empty-cart-cls text-center">
+                 <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                 <h3><strong>Your Cart is Empty</strong></h3>
+                 <h4>Add something to make me happy :)</h4>
+                 <a href="#" class="btn btn-primary cart-btn-transform m-3" routerLink="/" data-abc="true">continue shopping</a>
+               </div>
+           </div>
+       </div>
+
+
+         </div>
+
+        </div>
+
+       </div>
+    </div>
+  </div>
+</div>

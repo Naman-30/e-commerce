@@ -1,0 +1,38 @@
+<div class="row product-details" *ngIf="product">
+  <div class="col-sm-6">
+    <img src="{{ product.url }}" alt="product img" />
+  </div>
+  <div class="col-sm-6">
+    <div class="details m-5">
+      <h1>{{ product.name }}</h1>
+      <span
+        ><h3>Color: {{ product.color }}</h3></span
+      >
+      <h3>Category: {{ product.category }}</h3>
+      <h4>Description: {{ product.description }}</h4>
+      <button mat-button
+      [style.background]="'#0092ffcc'"
+        *ngIf="!isAddToCart"
+        (click)="addToCart()"
+      >
+       <mat-icon>add_shopping_cart</mat-icon> Add to Cart
+      </button>
+      <button mat-button
+      [style.background]="'#f90606e8'"
+        *ngIf="isAddToCart"
+        (click)="removeFromCart()"
+      >
+        <mat-icon>remove_shopping_cart</mat-icon> Remove from Cart
+      </button>
+      <button mat-button
+      [style.margin]="'20px'"
+        [style.background]="'#21a933db'">
+        <mat-icon>shopping_cart_checkout</mat-icon> Buy Now</button>
+      <div class="quantity-group">
+        <button (click)="handleQuantity('min')" class="buttons">-</button>
+        <input type="text" value="{{ productQuantity }}" />
+        <button (click)="handleQuantity('add')" class="buttons">+</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+{
+  "products": [
+    {
+      "name": "P.C.",
+      "price": "97999",
+      "url": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "color": "unknown",
+      "category": "Electronics",
+      "description": "yet to decide",
+      "id": 7
+    },
+    {
+      "name": "Tablet",
+      "price": "54999",
+      "url": "https://images.unsplash.com/photo-1568918460973-fe7f54f82482?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dGFibGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "color": "white",
+      "category": "Electronics",
+      "description": "unknown",
+      "id": 8
+    },
+    {
+      "name": "Laptop",
+      "price": "72999",
+      "url": "https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGxhcHRvcHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "color": "Black",
+      "category": "Electronics",
+      "description": "best ...",
+      "id": 9
+    },
+    {
+      "name": "Mobile",
+      "price": "36000",
+      "url": "https://images.unsplash.com/photo-1567581935884-3349723552ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "color": "Black",
+      "category": "Electronics",
+      "description": "mobile ...",
+      "id": 10
+    },
+    {
+      "name": "television",
+      "price": "24999",
+      "url": "https://images.unsplash.com/photo-1542889727-c599a84a54f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "color": "gray",
+      "category": "Electronics",
+      "description": "bild 5 - The Loewe bild 5 is modular, creative and fun.",
+      "id": 11
+    },
+    {
+      "name": "Headphone",
+      "price": "6900",
+      "url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "color": "Black",
+      "category": "Electronics",
+      "description": "Editorial, Technology, Arts & Culture with boat sound..",
+      "id": 12
+    },
+    {
+      "name": "Puma White Sneakers",
+      "price": "2000",
+      "url": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+      "color": "white",
+      "category": "cloths",
+      "description": "premium shoe save upto 20% limited time offer",
+      "id": 13
+    },
+    {
+      "name": "jeans",
+      "price": "5900",
+      "url": "https://images.unsplash.com/photo-1582552938357-32b906df40cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+      "color": "light blue",
+      "category": "cloths",
+      "description": "best jeans durable for any condition",
+      "id": 14
+    }
+  ],
+  "sellers": [
+    {
+      "name": "naman",
+      "email": "naman@ideal.in",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "name": "raviraj",
+      "email": "raviraj@idealittechno.com",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "name": "naman",
+      "email": "admin@test.com",
+      "password": "12345678",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "name": "naman",
+      "email": "admin@test.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "name": "ajay",
+      "email": "ajay@test.com",
+      "password": "12345678",
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "name": "P.C.",
+      "price": "97999",
+      "url": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "color": "unknown",
+      "category": "Electronics",
+      "description": "yet to decide",
+      "quantity": 10,
+      "userId": 1,
+      "productId": 7,
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "email": "admin@test.com",
+      "contact": "9823724676",
+      "address": "1234 Main St",
+      "totalPrice": 342050,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "email": "ajay@test.com",
+      "contact": "9823724676",
+      "address": "1234 Main St",
+      "totalPrice": 145398.1,
+      "userId": 1,
+      "id": 2
+    }
+  ]
+}

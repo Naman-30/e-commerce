@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="container m-5">
+    <h1>My Orders</h1>
+    <div class="row">
+      <div class="col-sm-2"><h2>Order</h2></div>
+      <div class="col-sm-2"><h2>Order id</h2></div>
+      <div class="col-sm-2"><h2>Price</h2></div>
+      <div class="col-sm-2"><h2>Status</h2></div>
+      <div class="col-sm-2"><h2>Action</h2></div>
+    </div>
+    <div class="row" *ngFor="let order of orderData">
+      <div class="col-sm-2">
+        <img src="https://www.shutterstock.com/image-vector/shopping-cart-check-mark-icon-600w-1708233319.jpg" alt="">
+      </div>
+      <div class="col-sm-2"><h3>
+        {{order.id}}
+      </h3></div>
+      <div class="col-sm-2"><h3>{{order.totalPrice}}</h3></div>
+      <div class="col-sm-2"><h3>In progress</h3></div>
+      <div class="col-sm-2"><h3>
+        <button class="btn btn-danger" (click)="cancelOrder(order.id)">Cancel Order</button>
+      </h3></div>
+    </div>
+
+  </div>
+</div>

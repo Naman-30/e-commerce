@@ -1,0 +1,137 @@
+<div class="container-fluid">
+  <div class="container">
+    <div *ngIf="errorShow" class="alert alert-danger" role="alert">
+      Invalid email or password
+    </div>
+    <div class="card p-5 m-5">
+      <h1 style="font-size: 40px; margin-bottom: 40px;"><strong>Seller {{isLogin? 'Login' : 'SignUp'}}</strong></h1>
+
+      <!-- seller signUp -->
+      <form *ngIf="!isLogin" #seller="ngForm" (ngSubmit)="sellerSubmit(seller)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Enter name</label>
+          <input
+            #name="ngModel"
+            [(ngModel)]="sellerForm.name"
+            name="name"
+            type="name"
+            class="form-control"
+            id="name"
+            required
+            minlength="3"
+            maxlength="18"
+            aria-describedby="nameHelp"
+          />
+          <div *ngIf="!(name.invalid && ( name.touched || submitted))" id="emailHelp" class="form-text">
+            &nbsp;
+          </div>
+          <div class="alert" *ngIf="(name.invalid && ( name.touched || submitted))" id="nameHelp" class="form-text text-danger">
+            <div *ngIf="name.errors?.['required']">name is required</div>
+            <div *ngIf="name.errors?.['minlength']">name must be atleast 3 character long</div>
+            <div *ngIf="name.errors?.['maxlength']">name to long</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            #email="ngModel"
+            [(ngModel)]="sellerForm.email"
+            name="email"
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            required
+            email
+          />
+          <div *ngIf="!(email.invalid && ( email.touched || submitted))" id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+          <div class="alert" *ngIf="(email.invalid && ( email.touched || submitted))"  id="emailHelp" class="form-text text-danger">
+            <div *ngIf="email.errors?.['required']">email is required</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="passwordHelp" class="form-label">Password</label>
+          <input
+            #password="ngModel"
+            [(ngModel)]="sellerForm.password"
+            name="password"
+            type="password"
+            class="form-control"
+            id="passwordHelp"
+            required
+            minlength="6"
+            maxlength="18"
+            aria-describedby="passwordHelp"
+            />
+        </div>
+        <div *ngIf="!(password.invalid && ( password.touched || submitted))" id="emailHelp" class="form-text">
+          &nbsp;
+        </div>
+        <div class="alert" *ngIf="(password.invalid && ( password.touched || submitted))" id="passwordHelp" class="form-text text-danger">
+          <div *ngIf="password.errors?.['required']">password is required</div>
+          <div *ngIf="password.errors?.['minlength']">password must be atleast 6 character long</div>
+          <div *ngIf="password.errors?.['maxlength']">password to long</div>
+          <!-- <div *ngIf="password.errors?.['pattern']">password must contain one uppercase, one lowercase, one digit and one spacial character </div> -->
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <!-- seller login  -->
+      <form *ngIf="isLogin" #sellLogin="ngForm" (ngSubmit)="sellerLogin(sellLogin)">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            #email="ngModel"
+            [(ngModel)]="login.email"
+            name="email"
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            required
+            email
+          />
+          <div *ngIf="!(email.invalid && ( email.touched || logSubmitted))" id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+          <div class="alert" *ngIf="(email.invalid && ( email.touched || logSubmitted))"  id="emailHelp" class="form-text text-danger">
+            <div *ngIf="email.errors?.['required']">email is required</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="passwordHelp" class="form-label">Password</label>
+          <input
+            #password="ngModel"
+            [(ngModel)]="login.password"
+            name="password"
+            type="password"
+            class="form-control"
+            id="passwordHelp"
+            required
+            minlength="6"
+            maxlength="18"
+            aria-describedby="passwordHelp"
+            />
+        </div>
+        <div *ngIf="!(password.invalid && ( password.touched || logSubmitted))" id="emailHelp" class="form-text">
+          &nbsp;
+        </div>
+        <div class="alert" *ngIf="(password.invalid && ( password.touched || logSubmitted))" id="passwordHelp" class="form-text text-danger">
+          <div *ngIf="password.errors?.['required']">password is required</div>
+          <div *ngIf="password.errors?.['minlength']">password must be atleast 6 character long</div>
+          <div *ngIf="password.errors?.['maxlength']">password to long</div>
+          <!-- <div *ngIf="password.errors?.['pattern']">password must contain one uppercase, one lowercase, one digit and one spacial character </div> -->
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+      <!-- change btn  -->
+      <br>
+      <h2>{{isLogin? "Don't" : 'Already'}} have an account? <strong style="color:rgb(20, 117, 197); cursor: pointer;" (click)="isLogin = !isLogin">{{isLogin? 'SignUp' : 'Login'}}</strong></h2>
+    </div>
+  </div>
+</div>
+
+

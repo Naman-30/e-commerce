@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="container m-5">
+    <h1>Checkout</h1>
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="card m-3 p-4">
+          <h3>Add Shopping Details</h3>
+          <form #orderForm="ngForm" (ngSubmit)="orderNow(orderForm)">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Enter Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                ngModel
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                required
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="contact" class="form-label"
+                >Enter contact Details</label
+              >
+              <input required type="text" name="contact" ngModel class="form-control" id="contact" />
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Enter address</label>
+              <input required type="text" name = "address" ngModel class="form-control" id="address" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              Order Now
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="section m-5">
+          <h2>Total Amount : <strong>{{totalPrice | currency}}</strong></h2>
+          <h2>Delivery Method : <strong>Pay on delivery</strong></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

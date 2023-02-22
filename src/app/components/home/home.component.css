@@ -1,0 +1,29 @@
+.popularProductImg{
+  /* object-fit: contain; */
+  width: 95%;
+  height: 500px;
+  margin: 2.5%;
+}
+
+
+.example-card {
+  max-width: 30%;
+  margin: 10px auto;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.cardData{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.imgBox{
+  cursor: pointer;
+}
